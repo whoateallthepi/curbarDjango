@@ -77,7 +77,7 @@ def forecast_view (request, station_id):
          one_day = d.filter(date__date=(timezone.now() + timedelta(days=delta)))
          timesteps =  Timestep.objects.filter(day__in=one_day).filter(step_time__gt=past_3hrs).order_by('step_time') 
          #### create a list of 'table' objects ####
-         tables.append(TimestepTable(timesteps))
+         tables.append(TimestepTable(timesteps, orderable=False))
          # the following rather depends on the forecasts
          # being updated today - could need a fix?
          dates.append(timezone.now() + timedelta(days=delta))
