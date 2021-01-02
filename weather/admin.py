@@ -8,6 +8,7 @@ from .models import Forecast
 from .models import Day
 from .models import Timestep
 from .models import Symbol
+from .models import Image
 
 #admin.site.register(Station)
 #admin.site.register(Reading)
@@ -34,3 +35,7 @@ class TimestepAdmin(admin.ModelAdmin):
 @admin.register(Symbol)
 class SymbolAdmin(admin.ModelAdmin):
   list_display = [field.name for field in Symbol._meta.get_fields()]
+
+@admin.register(Image)
+class ImageAdmin(admin.ModelAdmin):
+  list_display = [field.name for field in Image._meta.get_fields()]  

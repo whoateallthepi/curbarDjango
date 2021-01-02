@@ -145,6 +145,17 @@ class Timestep (models.Model):
       #breakpoint()
       return row [0]
 
+class Image(models.Model):
+   title = models.CharField(max_length=200)
+   slug = models.SlugField(max_length=100,
+                           blank = True)
+   image=models.ImageField(upload_to='images/%Y/%m')
+   description = models.TextField(blank=True)
+   created = models.DateField(auto_now_add=True)
+
+   def __str__(self):
+      return self.title
+
   
    
 
