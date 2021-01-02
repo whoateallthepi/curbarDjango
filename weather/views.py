@@ -60,7 +60,8 @@ def reading_search (request):
                   {'form': form,
                    'date_from': date_from,
                    'date_to': date_to,
-                   'result' : result }) 
+                   'result' : result,
+                   'station' : station,}) 
 
 def forecast_view (request, station_id):
     #
